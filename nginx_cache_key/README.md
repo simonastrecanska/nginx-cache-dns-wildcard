@@ -15,7 +15,7 @@ git clone https://github.com/simonastrecanska/nginx-cache-dns-wildcard.git
 2. **Navigate to the `examples` directory**:
     ```sh
     cd nginx-cache-dns-wildcard
-    cd mynginx/examples
+    cd nginx_cache_key/examples
     ```
 
 2. **Run the example request script**:
