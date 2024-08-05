@@ -1,5 +1,3 @@
-
-
 This project demonstrates how to build and integrate a custom Nginx module that calculates and adds a `X-Cache-Key` header to HTTP responses. The custom module is built and tested using Docker.
 
 ## Prerequisites
@@ -7,33 +5,17 @@ This project demonstrates how to build and integrate a custom Nginx module that 
 - Docker
 - Curl
 
-## Files
-
-### `Dockerfile`
-
-The `Dockerfile` builds Nginx with the custom module and sets up the environment.
-
-### `conf/nginx.conf`
-
-The Nginx configuration file, which includes settings for proxy caching and adding the `X-Cache-Key` header.
-
-### `ngx_http_cache_key_module/config`
-
-Configuration file for the custom module to be recognized by the Nginx build system.
-
-### `ngx_http_cache_key_module/ngx_http_cache_key_module.c`
-
-Source code of the custom Nginx module that calculates and adds the `X-Cache-Key` header.
-
-### `example/example_request.sh`
-
-A script to build the Docker image, run the Nginx container, and make various HTTP requests to test the module.
-
 ## Building and Running
 
-1. **Navigate to the `example` directory**:
+1. Clone the repository if you haven't already:
+```sh
+git clone https://github.com/simonastrecanska/nginx-cache-dns-wildcard.git
+```
+
+2. **Navigate to the `examples` directory**:
     ```sh
-    cd mynginx/example
+    cd nginx-cache-dns-wildcard
+    cd mynginx/examples
     ```
 
 2. **Run the example request script**:
@@ -64,6 +46,19 @@ This script will:
 
 You should see HTTP response headers including the `X-Cache-Key` header with the expected values.
 
+## Files
+
+-`Dockerfile` : builds Nginx with the custom module and sets up the environment.
+
+-`conf/nginx.conf` : the Nginx configuration file, which includes settings for proxy caching and adding the `X-Cache-Key` header.
+
+-`ngx_http_cache_key_module/config` : configuration file for the custom module to be recognized by the Nginx build system.
+
+-`ngx_http_cache_key_module/ngx_http_cache_key_module.c` : source code of the custom Nginx module that calculates and adds the `X-Cache-Key` header.
+
+-`example/example_request.sh` : a script to build the Docker image, run the Nginx container, and make various HTTP requests to test the module.
+
 #### Key Functions:
 - `ngx_http_cache_key_header_filter`: Calculates the cache key and adds it to the response headers.
 - `ngx_http_cache_key_filter_init`: Initializes the header filter.
+
