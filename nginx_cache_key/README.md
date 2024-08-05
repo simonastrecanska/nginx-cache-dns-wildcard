@@ -34,13 +34,10 @@ This script will:
     - `/anything` endpoint with a query string.
     - `/headers` endpoint.
     - `/status/200` endpoint.
-4. Check and print the Docker logs.
-5. Clean up the Docker container.
-6. Stop and remove any existing container named `mynginx2`.
-7. Run a new container instance on port 8081.
-8. Repeat the tests on port 8081.
-9. Check and print the Docker logs for the second container.
-10. Clean up the second Docker container.
+4. Clean up the Docker container.
+5. Run a new container instance on port 8081.
+6. Repeat the tests on port 8081.
+7. Clean up the second Docker container.
 
 ## Example Output
 
